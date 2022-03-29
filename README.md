@@ -1,6 +1,6 @@
 # Challenge: "Baby Name Picker (React)"
 
-![Example Screenshot from the finished challenge](./example-screenshots/finished.png)
+![Example Screenshot from the finished challenge](https://github.com/CodeYourFuture/cyf-react-challenges/blob/master/challenge-baby-name-picker/example-screenshots/finished.png?raw=true)
 
 ## Challenge Overview
 
@@ -68,7 +68,7 @@ so...
 
 ### Example Screenshot
 
-![Level 1 Example Screenshot](./example-screenshots/level-1.png)
+![Level 1 Example Screenshot](https://github.com/CodeYourFuture/cyf-react-challenges/raw/master/challenge-baby-name-picker/example-screenshots/level-1.png)
 
 # Level 2 challenge
 
@@ -82,7 +82,7 @@ so...
 
 ### Example Screenshot
 
-![Level 2 Example Screenshot](./example-screenshots/level-2.png)
+![Level 2 Example Screenshot](https://github.com/CodeYourFuture/cyf-react-challenges/raw/master/challenge-baby-name-picker/example-screenshots/level-2.png)
 
 # Level 3 challenge
 
@@ -95,7 +95,7 @@ so...
 
 ### Example Screenshot
 
-![Level 3 Example Screenshot](./example-screenshots/level-3.png)
+![Level 3 Example Screenshot](https://github.com/CodeYourFuture/cyf-react-challenges/raw/master/challenge-baby-name-picker/example-screenshots/level-3.png)
 
 # Level 4 challenge
 
@@ -115,7 +115,7 @@ If there is also a search term in effect, your app should apply any name gender 
 
 ### Example Screenshot
 
-![Level 4 Example Screenshot](./example-screenshots/level-4.png)
+![Level 4 Example Screenshot](https://github.com/CodeYourFuture/cyf-react-challenges/raw/master/challenge-baby-name-picker/example-screenshots/level-4.png)
 
 # Beyond - ideas for more work
 
