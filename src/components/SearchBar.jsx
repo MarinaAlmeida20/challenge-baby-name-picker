@@ -5,6 +5,7 @@ import NameContainer from "./NameContainer";
 function SearchBar({ placeholder, babyNames }) {
   const [wordEntered, setWordEntered] = useState("");
   const [favourites, setFavourites] = useState([]);
+  const [sexFilter, setSexFilter] = useState("all");
 
   const handleAddNameToFavourites = (clickedName) => {
     setFavourites([...favourites, clickedName]);
@@ -25,7 +26,7 @@ function SearchBar({ placeholder, babyNames }) {
   const sortedAndFilteredBabyNames = babyNames
     .sort((a, b) => a.name.localeCompare(b.name))
     .filter((nameObj) => {
-      const { name, id } = nameObj;
+      const { name, id, sex } = nameObj;
       const wordEnteredIsInName = name
         .toLowerCase()
         .includes(wordEntered.toLowerCase());
@@ -33,7 +34,11 @@ function SearchBar({ placeholder, babyNames }) {
       const favouriteIds = favourites.map((name) => name.id); // array of IDs
       const isSelectedAsFavourite = favouriteIds.includes(id); // remove the name from the list and put in favourites
 
-      return wordEnteredIsInName && !isSelectedAsFavourite;
+      const sexMatchesSelectedSex = sexFilter === "all" || sexFilter === sex;
+
+      return (
+        wordEnteredIsInName && !isSelectedAsFavourite && sexMatchesSelectedSex
+      );
     });
 
   return (
@@ -47,34 +52,34 @@ function SearchBar({ placeholder, babyNames }) {
         />
         <div>
           <button
-            onClick={() => {
-              console.log("clicked All");
-              babyNames.map((value, key) => {
-                console.log(value.name);
-              });
+            style={{
+              backgroundColor: sexFilter === "all" ? "orange" : "orange",
             }}
+            onClick={() => setSexFilter("all")}
           >
-            <span>All</span>
+            ALL
           </button>
           <button
-            onClick={() => {
-              console.log("clicked Girls");
-              babyNames.map((value, key) => {
-                console.log(value.sex === "f" && value.name);
-              });
+            style={{
+              backgroundColor:
+                sexFilter === "all"
+                  ? "rgba(238, 174, 202, 1)"
+                  : "rgba(238, 174, 202, 1)",
             }}
+            onClick={() => setSexFilter("f")}
           >
-            <span>Girls</span>
+            GIRLS
           </button>
           <button
-            onClick={() => {
-              console.log("clicked Boys");
-              babyNames.map((value, key) => {
-                console.log(value.sex === "m" && value.name);
-              });
+            style={{
+              backgroundColor:
+                sexFilter === "all"
+                  ? "rgba(148, 187, 233, 1)"
+                  : "rgba(148, 187, 233, 1)",
             }}
+            onClick={() => setSexFilter("m")}
           >
-            <span>Boys</span>
+            BOYS
           </button>
         </div>
       </div>
