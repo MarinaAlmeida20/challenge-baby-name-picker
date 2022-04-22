@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import "./SearchBar.css";
 import NameContainer from "./NameContainer";
+import RadioButton from "./RadioButton";
 
-function SearchBar({ placeholder, babyNames }) {
+function MainContent({ placeholder, babyNames }) {
   const [wordEntered, setWordEntered] = useState("");
   const [favourites, setFavourites] = useState([]);
   const [sexFilter, setSexFilter] = useState("all");
@@ -50,38 +51,21 @@ function SearchBar({ placeholder, babyNames }) {
           value={wordEntered}
           onChange={(event) => setWordEntered(event.target.value)}
         />
-        <div>
-          <button
-            style={{
-              backgroundColor: sexFilter === "all" ? "orange" : "orange",
-            }}
-            onClick={() => setSexFilter("all")}
-          >
-            ALL
-          </button>
-          <button
-            style={{
-              backgroundColor:
-                sexFilter === "all"
-                  ? "rgba(238, 174, 202, 1)"
-                  : "rgba(238, 174, 202, 1)",
-            }}
-            onClick={() => setSexFilter("f")}
-          >
-            GIRLS
-          </button>
-          <button
-            style={{
-              backgroundColor:
-                sexFilter === "all"
-                  ? "rgba(148, 187, 233, 1)"
-                  : "rgba(148, 187, 233, 1)",
-            }}
-            onClick={() => setSexFilter("m")}
-          >
-            BOYS
-          </button>
-        </div>
+        <RadioButton
+          name="all"
+          setSexFilter={setSexFilter}
+          sexFilter={sexFilter}
+        />
+        <RadioButton
+          name="f"
+          setSexFilter={setSexFilter}
+          sexFilter={sexFilter}
+        />
+        <RadioButton
+          name="m"
+          setSexFilter={setSexFilter}
+          sexFilter={sexFilter}
+        />
       </div>
       <div style={{ display: "flex", flexDirection: "column" }}>
         FAVOURITES:
@@ -99,4 +83,4 @@ function SearchBar({ placeholder, babyNames }) {
   );
 }
 
-export default SearchBar;
+export default MainContent;
