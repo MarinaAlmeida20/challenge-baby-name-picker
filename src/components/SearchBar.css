@@ -56,3 +56,7 @@ input:focus {
 #clearBtn {
   cursor: pointer;
 }
+
+.line {
+  border-bottom: 5px solid #d53a9d;
+}
